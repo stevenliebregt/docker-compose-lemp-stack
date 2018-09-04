@@ -32,3 +32,15 @@ Clone this repository with the following command: `git clone https://github.com/
 ##### Start the server.
 
 Start the server using the following command inside the directory you just cloned: `docker-compose up`.
+
+## Entering the containers
+
+You can use the following command to enter a container:
+
+Where `{CONTAINER_NAME}` is one of:
+
+`docker exec -ti {CONTAINER_NAME} /bin/bash`
+
+* `{APP_NAME}-php`
+* `{APP_NAME}-nginx`
+* `{APP_NAME}-mariadb`

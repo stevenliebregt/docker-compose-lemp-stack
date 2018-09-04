@@ -1,7 +1,10 @@
 version: '3'
 services:
     php:
-        image: 'php:7.2-fpm'
+        # image: 'php:7.2-fpm'
+        build:
+            context: ./docker
+            dockerfile: php.Dockerfile
         container_name: ${APP_NAME:?err}-php
         volumes:
             - './app:/var/www/html'
