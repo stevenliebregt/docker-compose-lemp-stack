@@ -10,7 +10,7 @@ services:
             - './app:/var/www/html'
 
     nginx:
-        image: 'nginx:1.13.6'
+        image: nginx:latest
         container_name: ${APP_NAME:?err}-nginx
         ports:
             - '80:80'
@@ -22,7 +22,7 @@ services:
             - './config/nginx:/etc/nginx/conf.d'
 
     mariadb:
-        image: 'mariadb:10.3.9'
+        image: mariadb:10.3.9
         container_name: ${APP_NAME:?err}-mariadb
         restart: 'on-failure'
         environment:
