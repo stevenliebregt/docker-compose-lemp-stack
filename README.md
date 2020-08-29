@@ -18,12 +18,12 @@ The Nginx configuration can be found in `config/nginx/`.
 
 You can also set the following environment variables, for example in the included `.env` file:
 
-| Key | Description |
-|-----|-------------|
-|APP_NAME|The name used when creating a container.|
-|MYSQL_ROOT_PASSWORD|The MySQL root password used when creating the container.|
-|PORT|The HTTP port to bind to Nginx.|
-|SECURE_PORT|The HTTPS port to bind to Nginx.|
+| Key | Description | Default |
+|-----|-------------|---------|
+|APP_NAME|The name used when creating a container.|`lemp`|
+|MYSQL_ROOT_PASSWORD|The MySQL root password used when creating the container.|`supertrickypassword`|
+|PORT|The HTTP port to bind to Nginx.|`80`|
+|SECURE_PORT|The HTTPS port to bind to Nginx.|`443`|
 
 ## Usage
 
