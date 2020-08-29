@@ -1,25 +1,26 @@
 version: '3'
 services:
     php:
-        # image: 'php:7.2-fpm'
         build:
             context: ./docker
             dockerfile: php.Dockerfile
         container_name: ${APP_NAME:?err}-php
         volumes:
-            - './app:/var/www/html'
+            - './html:/var/www/html'
+        depends_on:
+            - mariadb
 
     nginx:
         image: nginx:latest
         container_name: ${APP_NAME:?err}-nginx
         ports:
-            - '80:80'
-            - '443:443'
-        links:
-            - 'php'
+            - '{PORT:?err}:80'
+            - '{SECURE_PORT:?err}:443'
         volumes:
-            - './app:/var/www/html'
+            - './html:/var/www/html'
             - './config/nginx:/etc/nginx/conf.d'
+        depends_on:
+            - php
 
     mariadb:
         image: mariadb:10.3.9
