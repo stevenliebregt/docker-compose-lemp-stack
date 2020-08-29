@@ -1,13 +1,15 @@
 # Docker Compose LEMP Stack
 
+Forked from [stevenliebregt](https://github.com/stevenliebregt/docker-compose-lemp-stack).
+
 This repository contains a little `docker-compose` configuration to start a `LEMP (Linux, Nginx, MariaDB, PHP)` stack.
 
 ## Details
 
 The following versions are used.
 
-* PHP 7.2 (FPM)
-* Nginx 1.13.6
+* PHP 7.2 (FPM) (php:7.2-fpm image)
+* Nginx (latest)
 * MariaDB 10.3.9
 
 ## Configuration
@@ -20,6 +22,8 @@ You can also set the following environment variables, for example in the include
 |-----|-------------|
 |APP_NAME|The name used when creating a container.|
 |MYSQL_ROOT_PASSWORD|The MySQL root password used when creating the container.|
+|PORT|The HTTP port to bind to Nginx.|
+|SECURE_PORT|The HTTPS port to bind to Nginx.|
 
 ## Usage
 
@@ -27,7 +31,7 @@ To use it, simply follow the following steps:
 
 ##### Clone this repository.
 
-Clone this repository with the following command: `git clone https://github.com/stevenliebregt/docker-compose-lemp-stack.git`.
+Clone this repository with the following command: `git clone https://github.com/jade-doggerel/docker-compose-lemp-stack.git`.
 
 ##### Start the server.
 
