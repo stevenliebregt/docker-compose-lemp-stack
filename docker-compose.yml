@@ -8,6 +8,8 @@ services:
         container_name: ${APP_NAME:?err}-php
         volumes:
             - './app:/var/www/html'
+        depends_on:
+            - mariadb
 
     nginx:
         image: nginx:latest

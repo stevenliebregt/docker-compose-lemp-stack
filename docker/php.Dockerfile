@@ -5,3 +5,5 @@ RUN apt-get update && \
 
 RUN curl --silent --show-error https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer
+
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
