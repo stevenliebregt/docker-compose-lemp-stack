@@ -6,7 +6,7 @@ This repository contains a little `docker-compose` configuration to start a `LEM
 
 The following versions are used.
 
-* PHP 7.2 (FPM)
+* PHP 7.2 (FPM) with MySQLi driver
 * Nginx 1.13.6
 * MariaDB 10.3.9
 
@@ -44,3 +44,10 @@ Where `{CONTAINER_NAME}` is one of:
 * `{APP_NAME}-php`
 * `{APP_NAME}-nginx`
 * `{APP_NAME}-mariadb`
+
+## Connecting DB from code
+
+```php
+    $servername = "mariadb";
+    $conn = mysqli_connect($servername, $username, $password, $database);
+```
