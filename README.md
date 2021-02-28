@@ -6,7 +6,7 @@ This repository contains a little `docker-compose` configuration to start a `LEM
 
 The following versions are used.
 
-* PHP 7.2 (FPM) with MySQLi driver
+* PHP 7.2 (FPM) - With MySQLi driver optionally (Uncomment line from php.Dockerfile)
 * Nginx 1.13.6
 * MariaDB 10.3.9
 
