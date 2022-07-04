@@ -26,6 +26,8 @@ services:
     mariadb:
         image: mariadb:10.3.9
         container_name: ${APP_NAME:?err}-mariadb
+        ports:
+            - '3306:3306'
         restart: 'on-failure'
         environment:
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?err}
